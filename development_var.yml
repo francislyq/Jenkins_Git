@@ -1,0 +1,128 @@
+---
+# Vars for staging deployments on Vagrant.
+
+# Vagrant config
+vm_hostname: "app01"
+vm_name: "jenkins_git_app01"
+vm_ip: "192.168.123.123"
+vm_postgres_guest_port: 5433
+vm_redis_guest_port: 6379
+vm_http_guest_port: 8889
+vm_ssh_guest_port: 2121
+#vm_api_guest_port: 5000
+vm_ui_guest_port: 3000
+vm_goconvey_guest_port: 9100
+
+##
+# the admin user
+##
+admin_user: "vagrant"
+
+# gopath
+go_path: "/usr/local"
+
+# gnatsd
+# gnatsd_bind: "0.0.0.0"
+# gnatsd_host: "localhost"
+# gnatsd_port: 4222
+# gnatsd_http_port: 8222
+# gnatsd_username: "nats"
+# gnatsd_password: "password"
+
+# project
+project_repo: "git@github.com:francislyq/Jenkins_Git.git"
+project_dir: "/Jenkins_Git"
+
+# ssh vars
+sshd_port: 22
+
+# nginx
+nginx_client_max_body_size: "10m"
+nginx_client_body_buffer_size: "128k"
+nginx_proxy_connect_timeout: "60s"
+nginx_proxy_send_timeout: "90s"
+nginx_proxy_read_timeout: "90s"
+nginx_proxy_buffering: "off"
+nginx_proxy_temp_file_write_size: "64k"
+nginx_proxy_redirect: "off"
+nginx_client_max_body_size: "10m"
+
+# api
+#api_port: 5000
+
+# ui
+ui_port: 3000
+
+##
+# shared database information
+##
+db_user: "myjenkinsgit"
+db_password: "password"
+db_host: "localhost"
+db_port: 5432
+db_db: "myjenkinsgitdb"
+db_schema: "public"
+db_type: "postgresql"
+
+##
+# redis vars
+#
+# They are prefixed with "kv_" to avoid clashing with any variables in the
+# "redis" role.
+##
+kv_type: "redis"
+kv_user: ""
+kv_password: ""
+kv_host: "localhost"
+kv_port: 6379
+kv_db: 0
+
+# stripe
+##
+stripe_secret_key: ""
+stripe_publishable_key: ""
+
+##
+# sendgrid credentials
+##
+sendgrid_username: ""
+sendgrid_password: ""
+
+##
+# Analytics
+##
+analytics_active: "false"
+
+##
+# keen.io keys
+##
+keenio_write_key: ""
+keenio_read_key: ""
+keenio_project_id: ""
+
+##
+# segment.io keys
+##
+segmentio_write_key: ""
+segmentio_read_key: ""
+segmentio_project_id: ""
+
+##
+# google
+##
+google_analytics_id: ""
+google_api_key: ""
+google_maps_key: ""
+
+##
+# intercom
+##
+intercom_app_id: ""
+
+##
+# aws
+##
+aws_access_key_id: ""
+aws_secret_access_key: ""
+aws_region: "us-west-2"
+s3_bucket: ""

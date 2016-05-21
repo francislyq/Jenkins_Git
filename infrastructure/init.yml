@@ -1,0 +1,63 @@
+---
+# Init installs
+
+- name: gather all hosts information
+  hosts: all
+
+- name: install bower
+  hosts: appservers
+  roles:
+    - bower
+  tags:
+    - bower
+
+# - name: install wkhtmltopdf
+#   hosts: appservers
+#   vars_files:
+#     #- "vars/all.yml"
+#     - "vars/{{ stack }}_{{ provider }}.yml"
+#   roles:
+#     - wkhtmltopdf
+#   tags:
+#     - wkhtmltopdf
+
+# - name: install gnatsd
+#   hosts: appservers
+#   vars_files:
+#     #- "vars/all.yml"
+#     - "vars/{{ stack }}_{{ provider }}.yml"
+#   roles:
+#     - gnatsd
+#   tags:
+#     - gnatsd
+
+# - name: install python easy_install to install pip
+#   hosts: appservers
+#   tasks:
+#     - name: install python easy_install
+#       apt: name="{{ item }}" state=latest
+#       with_items:
+#         - python-setuptools
+#   tags:
+#     - pip
+#     - easy_install
+#
+# - name: install python pip
+#   hosts: appservers
+#   tasks:
+#     - name: install python pip
+#       easy_install: name="{{ item }}"
+#       with_items:
+#         - pip
+#   tags:
+#     - pip
+#
+# - name: install pip packages
+#   hosts: appservers
+#   tasks:
+#     - name: install pip packages
+#       pip: name="{{ item }}" state=latest
+#       with_items:
+#         - suds
+#   tags:
+#     - pip

@@ -1,0 +1,23 @@
+---
+# file: pgservers.yml
+#
+# Provisions only postgres servers.
+#
+- name: gather all hosts information
+  hosts: all
+
+- name: provision pg servers (step 1)
+  hosts: pgservers
+  vars_files:
+    #- "vars/all.yml"
+    - "vars/{{ stack }}.yml"
+  roles:
+    - common
+    - postgresql
+    - postgresql-client
+    - deploy-key
+    - golang
+    - goose
+  tasks:
+    - include: roles/common/tasks/sshkeys.yml
+    - { include: roles/common/tasks/user.yml, user: alexl, full_name: "Alexander Luksidadi", uid: 1102, group: ["admin"] }

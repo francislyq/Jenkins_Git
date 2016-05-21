@@ -1,0 +1,12 @@
+---
+# initial setup
+- include: init.yml
+
+# provision pgservers and redisservers first because appservers need it
+#- include: provision-pgservers.yml
+#- include: provision-redisservers.yml
+#- include: provision-appservers.yml
+
+# nginxservers will be the load balancer of all the app servers
+#- include: provision-nginxservers.yml
+#- include: deploy.yml
